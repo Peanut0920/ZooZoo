@@ -303,7 +303,7 @@ audio {
 /* Reveal message */
 .reveal-message {
   position: fixed;
-  top: 50%;
+  top: 80%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 100;
@@ -607,5 +607,6 @@ audio {
     font-size: 0.85rem;
   }
 }
+
 
 
