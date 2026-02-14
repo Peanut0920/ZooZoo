@@ -452,7 +452,7 @@ audio {
   }
   
   .floating-message {
-    top: 30%;
+    top: 80%;
   }
   
   .reveal-message {
@@ -607,6 +607,7 @@ audio {
     font-size: 0.85rem;
   }
 }
+
 
 
 
