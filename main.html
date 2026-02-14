@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For You ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>💖情人节快乐，我亲爱的Zoo Zoo💕</h1>
+  
+  <!-- Floating message -->
+  <div class="floating-message"> 
+    <span id="revealBtn">❤️ ！按这里！ ❤️</span>
+  </div>
+  
+  <div class="photo-container">
+    <div class="photo-info">
+      <span class="day-count">55</span>
+      <span class="day-text">Days</span>
+      <span class="day-subtext">Since 22 Dec 2025</span>
+    </div>
+    <div class="photo-frame">
+      <img src="photo.jpg" alt="Special photo">
+      <!-- Heart button at corner of photo -->
+      <button class="heart-btn" id="playBtn2">❤️</button>
+    <!-- Circle button beside photo -->
+    <button class="circle-btn" id="playBtn"><span>▶️</span></button>
+  </div>
+  
+  <!-- Background music (autoplay + loop) -->
+  <audio id="bgMusic" autoplay loop>
+    <source src="background.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Your recorded voice -->
+  <audio id="voice">
+    <source src="recording1.wav" type="audio/mpeg">
+  </audio>
+
+  <!-- New recording -->
+  <audio id="voice2">
+    <source src="recording2.wav" type="audio/mpeg">
+  </audio>
+
+  <!-- Sparkles -->
+  <div class="sparkles" id="sparkles"></div>
+  
+  <!-- Rose petals -->
+  <div class="petals" id="petals"></div>
+  
+  <!-- Romantic quotes -->
+  <div class="quote-container">
+    <div class="quote" id="quote"></div>
+  </div>
+  
+  <!-- Reveal message modal -->
+  <div class="reveal-message" id="revealMessage">
+    <button class="close-btn" id="closeBtn">×</button>
+    <h2>致亲爱的Zoo Zoo❤️</h2>
+    <p>这里先和你说声对不起先， 我没办法在情人节和你一起渡过。但是我和你想说的是，即使我们都现在只能拥有隔着一段距离的恋情。💕</p>
+    <p>但我相信我们可以一直继续努力无论是多遥远的距离，多久的时间，多大的世界里。我都会一直在！</p>
+    <p>爱你深深！,郑成俊先生 ">3<" </p>
+
+  </div>
+  
+  <!-- Floating hearts -->
+  <div class="hearts" id="hearts"></div>
+
+  <script>
+    const playBtn = document.getElementById('playBtn');
+    const voice = document.getElementById('voice');
+    const revealBtn = document.getElementById('revealBtn');
+    const revealMessage = document.getElementById('revealMessage');
+    const closeBtn = document.getElementById('closeBtn');
+
+    // Romantic quotes
+    const quotes = [
+      "我每天都爱你更多 ❤️",
+      "你是我生命中最美的意外 💕",
+      "无论距离多远，我的心永远和你在一起 💖",
+      "你是我每天醒来最想见到的人 🌹",
+      "每一天和你在一起都是情人节 💝",
+      "你是我心中永远的唯一 💗",
+      "无论世界多大，我的爱只属于你 💞",
+      "你是我生命中最甜蜜的梦 💓",
+      "爱你是我每天的动力 💌",
+      "你是我心中最温暖的阳光 ☀️",
+      "你是我生命中最珍贵的宝藏 💎",
+      "在这段感情是你的初恋，我会好好珍惜。 但是你也别对我太客气，想怎样都可以。我希望你自由，过得很开心和舒服。要是有事情就和我说，不想你难受了我也不会嘲笑你。我一直都是你的依靠。",
+    ];
+    
+    let currentQuote = 0;
+    const quoteElement = document.getElementById('quote');
+
+    // Rotate quotes
+    function showNextQuote() {
+      quoteElement.style.opacity = 0;
+      setTimeout(() => {
+        quoteElement.textContent = quotes[currentQuote];
+        currentQuote = (currentQuote + 1) % quotes.length;
+        quoteElement.style.opacity = 1;
+      }, 1000);
+    }
+    
+    // Initialize first quote
+    quoteElement.textContent = quotes[0];
+    setInterval(showNextQuote, 8000);
+
+    // Play voice when button is pressed
+    playBtn.addEventListener('click', () => {
+      voice.currentTime = 0; // restart from beginning
+      voice.play();
+    });
+
+    // Reveal message functionality
+    revealBtn.addEventListener('click', () => {
+      revealMessage.classList.add('show');
+    });
+    
+    closeBtn.addEventListener('click', () => {
+      revealMessage.classList.remove('show');
+    });
+
+    // Floating hearts effect with colors
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      
+      // Random color class
+      const colors = ['', 'pink', 'gold', 'purple'];
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      if (randomColor) heart.classList.add(randomColor);
+      
+      heart.style.left = Math.random() * 100 + 'vw'; // random horizontal position
+      heart.style.animationDuration = (3 + Math.random() * 2) + 's';
+      heart.style.width = (15 + Math.random() * 15) + 'px';
+      heart.style.height = heart.style.width;
+      document.getElementById('hearts').appendChild(heart);
+
+      setTimeout(() => heart.remove(), 5000);
+    }
+    setInterval(createHeart, 600);
+
+    // Sparkles effect
+    function createSparkle() {
+      const sparkle = document.createElement('div');
+      sparkle.className = 'sparkle';
+      sparkle.style.left = Math.random() * 100 + 'vw';
+      sparkle.style.top = Math.random() * 100 + 'vh';
+      sparkle.style.animationDelay = Math.random() * 2 + 's';
+      document.getElementById('sparkles').appendChild(sparkle);
+
+      setTimeout(() => sparkle.remove(), 4000);
+    }
+    setInterval(createSparkle, 500);
+
+    // Rose petals effect
+    function createPetal() {
+      const petal = document.createElement('div');
+      petal.className = 'petal';
+      petal.style.left = Math.random() * 100 + 'vw';
+      petal.style.animationDuration = (4 + Math.random() * 4) + 's';
+      petal.style.animationDelay = Math.random() * 2 + 's';
+      
+      // Vary petal colors
+      const colors = ['linear-gradient(135deg, #ff6b6b, #ee5a5a)', 'linear-gradient(135deg, #ff8e8e, #ff6b6b)', 'linear-gradient(135deg, #ffa07a, #ff7f50)'];
+      petal.style.background = colors[Math.floor(Math.random() * colors.length)];
+      
+      document.getElementById('petals').appendChild(petal);
+
+      setTimeout(() => petal.remove(), 8000);
+    }
+    setInterval(createPetal, 400);
+  </script>
+</body>
