@@ -70,6 +70,8 @@
   <script>
     const playBtn = document.getElementById('playBtn');
     const voice = document.getElementById('voice');
+    const playBtn2 = document.getElementById('playBtn2');
+    const voice2 = document.getElementById('voice2');
     const revealBtn = document.getElementById('revealBtn');
     const revealMessage = document.getElementById('revealMessage');
     const closeBtn = document.getElementById('closeBtn');
@@ -111,6 +113,12 @@
     playBtn.addEventListener('click', () => {
       voice.currentTime = 0; // restart from beginning
       voice.play();
+    });
+
+    // Play voice2 when heart button is pressed
+    playBtn2.addEventListener('click', () => {
+      voice2.currentTime = 0; // restart from beginning
+      voice2.play();
     });
 
     // Reveal message functionality
@@ -174,3 +182,4 @@
     setInterval(createPetal, 400);
   </script>
 </body>
+
