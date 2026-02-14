@@ -542,7 +542,7 @@ audio {
   }
   
   .floating-message {
-    top: 35%;
+    top: 85%;
   }
   
   .floating-message span {
@@ -607,6 +607,7 @@ audio {
     font-size: 0.85rem;
   }
 }
+
 
 
 
