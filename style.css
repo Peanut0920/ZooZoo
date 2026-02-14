@@ -413,3 +413,190 @@ audio {
   50% { transform: scale(1.1); text-shadow: 0 0 20px rgba(214,51,108,0.6); }
 }
 
+/* ============================================
+   MOBILE RESPONSIVE STYLES
+   ============================================ */
+
+/* Tablet breakpoint (iPads, small laptops) */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+    margin: 20px 10px;
+    padding: 0 10px;
+  }
+  
+  .photo-frame img {
+    max-width: 200px;
+    max-height: 280px;
+  }
+  
+  .quote {
+    font-size: 1.2rem;
+  }
+  
+  .quote-container {
+    bottom: 100px;
+    width: 85%;
+  }
+  
+  .day-count {
+    font-size: 2.5rem;
+  }
+  
+  .floating-message {
+    top: 30%;
+  }
+  
+  .reveal-message {
+    padding: 25px 30px;
+    width: 85%;
+    max-width: 400px;
+  }
+  
+  .reveal-message h2 {
+    font-size: 1.4rem;
+  }
+  
+  .reveal-message p {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile breakpoint (phones) */
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+    margin: 15px 10px;
+    line-height: 1.3;
+  }
+  
+  .photo-container {
+    margin: 30px auto;
+  }
+  
+  .photo-frame {
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .photo-frame img {
+    max-width: 160px;
+    max-height: 220px;
+  }
+  
+  .circle-btn {
+    width: 70px;
+    height: 70px;
+    margin: 20px auto;
+  }
+  
+  .circle-btn::before {
+    font-size: 24px;
+  }
+  
+  .heart-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+  
+  /* Position heart button at corner of photo */
+  .photo-frame {
+    position: relative;
+  }
+  
+  .photo-frame .heart-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+  
+  .day-count {
+    font-size: 2rem;
+  }
+  
+  .day-text {
+    font-size: 1.2rem;
+  }
+  
+  .day-subtext {
+    font-size: 0.85rem;
+  }
+  
+  .quote-container {
+    bottom: 80px;
+    width: 90%;
+  }
+  
+  .quote {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  
+  .floating-message {
+    top: 25%;
+  }
+  
+  .floating-message span {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    margin-top: 80px;
+  }
+  
+  .reveal-message {
+    padding: 20px;
+    width: 90%;
+    max-width: 350px;
+    border-radius: 15px;
+  }
+  
+  .reveal-message h2 {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+  .reveal-message p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .close-btn {
+    font-size: 20px;
+    top: 8px;
+    right: 10px;
+  }
+}
+
+/* Extra small phones */
+@media screen and (max-width: 360px) {
+  h1 {
+    font-size: 1.3rem;
+  }
+  
+  .photo-frame img {
+    max-width: 140px;
+    max-height: 190px;
+  }
+  
+  .circle-btn {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .day-count {
+    font-size: 1.8rem;
+  }
+  
+  .quote {
+    font-size: 0.9rem;
+  }
+  
+  .quote-container {
+    bottom: 70px;
+  }
+  
+  .floating-message span {
+    font-size: 0.85rem;
+  }
+}
+
